@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main   # شغل البايبلاين عند أي push على main
+      - main
 
 jobs:
   build:
@@ -21,8 +21,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/anegm10/myapp:latest .
+        run: docker build -t ghcr.io/Anegm10/todo-list-app:latest .
 
       - name: Push Docker image
-        run: docker push ghcr.io/anegm10/myapp:latest
-
+        run: docker push ghcr.io/anegm10/todo-list-app:latest
