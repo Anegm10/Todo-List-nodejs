@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/Anegm10/todo-list-app:latest .
+        run: docker build -t ghcr.io/anegm10/todo-list-app:latest .
 
       - name: Push Docker image
         run: docker push ghcr.io/anegm10/todo-list-app:latest
