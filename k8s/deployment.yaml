@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-app
+  namespace: default
 spec:
   replicas: 2
   selector:
@@ -18,7 +19,7 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: mongoDbUrl 
+            - name: mongoDbUrl
               valueFrom:
                 secretKeyRef:
                   name: mongo-secret
@@ -29,4 +30,6 @@ spec:
               port: 3000
             initialDelaySeconds: 10
             periodSeconds: 5
+      imagePullSecrets:
+        - name: ghcr-secret
 
