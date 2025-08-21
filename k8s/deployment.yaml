@@ -27,7 +27,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /
-              port: 3000
+              port: 4000
             initialDelaySeconds: 10
             periodSeconds: 5
       imagePullSecrets:
